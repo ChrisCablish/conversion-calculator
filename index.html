@@ -11,20 +11,24 @@
         //DECLARE VARIABLES
         const inches = prompt('How many inches?');
         let convertedTo = prompt('What unit of measurement would you like to convert to?');
-        const centimeters = convertToCentimeters(inches);
-        const pixels = convertToPixels(inches);
-        const feet = convertToFeet(inches)
-        convertedTo = Math.round(convertedTo);
+        let centimeters = convertToCentimeters(inches);
+        centimeters = centimeters.toFixed(2);
+        let pixels = convertToPixels(inches);
+        pixels = pixels.toFixed(2)
+        let feet = convertToFeet(inches)
+        feet = feet.toFixed(2);
+        convertedTo = convertedTo.toLowerCase();
+     
 
         //DECLARE FUNCTIONS
         function convertToCentimeters(inches){
-            return inches * 2.54
+            return inches * 2.54;
         }
         function convertToPixels(inches){
-            return inches * 96
+            return inches * 96;
         }
         function convertToFeet(inches){
-            return inches * (1/12)
+            return inches * (1/12);
         }
         //CALL FUNCTIONS DEPENDING ON USER SELECTION USING IF...ELSE STATEMENTS
 
