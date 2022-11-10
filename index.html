@@ -8,7 +8,9 @@
 </head>
 <body>
     <script>
+
         //DECLARE VARIABLES
+
         const inches = prompt('How many inches?');
         let convertedTo = prompt('What unit of measurement would you like to convert to?');
         let centimeters = convertToCentimeters(inches);
@@ -21,6 +23,7 @@
      
 
         //DECLARE FUNCTIONS
+
         function convertToCentimeters(inches){
             return inches * 2.54;
         }
@@ -33,24 +36,31 @@
         //CALL FUNCTIONS DEPENDING ON USER SELECTION USING IF...ELSE STATEMENTS
 
         if (convertedTo == 'pixel' || convertedTo == 'pixels') {
-            console.log(`${inches} inches is equivalent to ${pixels} pixels.`);
+            if (pixels == 1){
+            console.log(`${inches} inches is equivalent to ${pixels} pixel.`);
+            } else console.log(`${inches} inches is equivalent to ${pixels} pixels.`);
         }
 
         else if (convertedTo == 'centimeter' || convertedTo == 'centimeters') {
-            console.log(`${inches} inches is equivalent to ${centimeters} centimeters.`);
+            if (centimeters == 1){
+            console.log(`${inches} inches is equivalent to ${centimeters} centimeter.`);
+            } else console.log(`${inches} inches is equivalent to ${centimeters} centimeters.`);
         }
 
         else if (convertedTo == 'foot' || convertedTo == 'feet') {
-            console.log(`${inches} inches is equivalent to ${feet} feet.`);
+            if (feet == 1){
+            console.log(`${inches} inches is equivalent to ${feet} foot.`);
+            } else console.log(`${inches} inches is equivalent to ${feet} feet`);
         }
-
+        
         else {
-            console.log('Please choose centimeters, pixels, or feet. Check your spelling.')
+        console.log('Please choose centimeters, pixels, or feet. Check your spelling.')
         }
+        
+    
 
 
-
-        //SELECTIONS MUST NOT BE CASE SENSITIVE. SINGULAR AND PLURAL MUST BE RESPECTED. RECOGNIZE INVALID SELECTION
+        //SELECTIONS MUST NOT BE CASE SENSITIVE. SINGULAR AND PLURAL MUST BE RESPECTED. RECOGNIZE INVALID SELECTION. CONVERSION RESULTS ROUND TO TWO DECIMAL PLACES
        
     </script>
 </body>
